@@ -3,14 +3,17 @@ package main
 import (
   "fmt"
   "os"
+
+  "github.com/perfect5th/wesley/serve"
 )
 
-func serve(args []string) {
-  fmt.Println("Serving...")
+func startServing(args []string) {
+  fmt.Println("Serving at localhost:8081")
+  serve.Start(":8081")
 }
 
 var commands = map[string]func([]string){
-  "serve": serve,
+  "serve": startServing,
 }
 
 func main() {
